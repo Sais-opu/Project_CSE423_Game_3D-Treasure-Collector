@@ -1,117 +1,105 @@
 # 3D Treasure Collector
 
-3D Treasure Collector is a simple 3D game where the player explores the world, collects treasures, avoids falling obstacles, and uses special power-ups to survive. The goal is to collect treasures while managing health and time.
-
----
-
-## Team Members
+Developed as a group project:
 
 - Simran Zaman Mayabi  
 - Md Saidul Islam Apu  
 - Al-Amin Sagor  
 
----
+This is a simple 3D exploration game built with Python and PyOpenGL.  
+The player moves around a large world, collects treasures, avoids falling bricks, and survives as long as possible while managing time and health.
 
-## Languages and Technologies Used
-
-This project is built using:
-
-### Python
-The entire game logic is implemented in Python.
-
-### PyOpenGL
-Used to render 3D graphics and handle drawing:
-
-- `OpenGL.GL` for rendering shapes and objects
-- `OpenGL.GLU` for camera and projection utilities
-- `OpenGL.GLUT` for window handling and simple 3D primitives
-
-Other Python modules used:
-
-- `math` for calculations
-- `random` for treasure and obstacle placement
-- `time` for timers, countdowns, and power-up durations
-
-The project does not use a game engine. All mechanics are implemented manually using OpenGL.
+The project intentionally avoids using a game engine. All mechanics, rendering, and interactions are implemented manually.
 
 ---
 
-## Game Overview
+## Images / Screenshots
 
-The player moves around a 3D world, collecting normal and special treasures. Some treasures require a key. Random bricks fall from above, reducing health when hit. Special treasures provide temporary advantages such as extra time and health boosts.
+![Game Screenshot](https://i.ibb.co.com/qMDfdzvQ/2.png)
 
 ---
 
 ## Features
 
-### Player Movement
-Players can freely move around the 3D environment, navigate obstacles, and reach treasures.
+### Core Gameplay
+- Explore a fully open grid world
+- Collect normal and special treasures
+- Use a key to unlock special treasures
+- Restart and replay the game
 
-### Treasures
-- Normal treasures increase score.
-- Special treasures require a key and give additional benefits for 5 seconds.
-- Collecting treasure plus eating a special treasure gives 3 total points.
-
-### Key Mechanic
-Special treasure can only be opened using a key.  
-Sometimes players must jump or move through tricky paths to reach it.
-
-### Health System
-Random bricks may fall from the ceiling.  
-If the player is hit, health decreases.
+### Health and Damage
+- Random falling bricks can hit the player
+- Traps and collapsing debris reduce life
+- Game over when health reaches zero or time runs out
 
 ### Time System
-Collecting a special treasure increases remaining time by 5 seconds.
+- Total play time is limited
+- Special treasures can increase remaining time
 
-### Power-Ups
-Special treasures improve health and temporarily reduce danger.
+### Special Key System
+- A key spawns at a random location
+- Special treasures are locked until the key is collected
+- Some special treasures become visible for a short time after picking the key
 
-### Ceiling Collapse
-Random bricks fall as the player explores. Avoiding them is essential to survive.
+### Cheat Mode
+- Temporarily shows important elements
+- Stops random brick falling for a short time
 
----
-
-## Cheat Mode
-
-Cheat Mode allows the player to see only the key and normal treasures while obstacles go down.  
-When a special treasure is collected in cheat mode, brick falling stops for 5 seconds.
-
----
-
-## Win / Lose Conditions
-
-### Win
-- Collect the required treasures  
-- Stay alive until the end  
-- Keep enough health and time to finish  
-
-### Lose
-- Health reaches zero  
-- Time runs out  
-- Hit by falling obstacles too many times  
+### Brick and Ceiling System
+- Bricks spawn randomly and often target the player
+- Ceiling collapse triggers when time runs out
+- Debris falls dynamically across the map
 
 ---
 
-## Restart
+## Controls
 
-Players can restart the game after losing or winning and try again.
-
----
-
-## Suggested Controls (adjust if different)
-
-- W / A / S / D – Move  
-- Space – Jump  
-- E – Interact / Collect  
-- R – Restart  
-- C – Toggle Cheat Mode  
+- W / A / S / D — Move  
+- Space — Jump  
+- C — Toggle Cheat Mode  
+- R — Restart  
 
 ---
 
-## Summary
+## Technologies Used
 
-3D Treasure Collector focuses on timing, survival, and exploration.  
-Use the key wisely, avoid falling bricks, collect treasures, and stay alive long enough to win.
+### Language
+- Python
+
+### Libraries
+- OpenGL.GL  
+- OpenGL.GLU  
+- OpenGL.GLUT  
+- math, time, random  
 
 ---
 
+## How to Run
+
+1. Install Python (3.8+ recommended)
+
+```bash
+pip install PyOpenGL PyOpenGL_accelerate
+```
+
+2. Run the game:
+
+```bash
+python main.py
+```
+
+(Replace `main.py` with your actual filename.)
+
+---
+
+## Game Rules
+
+### Winning
+- Collect treasures
+- Stay alive
+- Manage time carefully
+
+### Losing
+- Health reaches zero
+- Time runs out
+- Hit by too many falling obstacles
